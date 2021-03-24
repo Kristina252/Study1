@@ -1,0 +1,253 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+
+
+int main()
+{
+	//ned.7
+	//Задание 1. Вывести на экран фигуры заполненные звездочками.
+	//Диалог с пользователем реализовать при помощи меню.
+
+
+	char bukva;
+	cout << "vvdite bukvu iz-(a,b,v,g,d,e,z,i,k,q,w)- ";
+	cin >> bukva;
+
+	if (bukva == 'a')
+	{
+		int y;
+		cout << "vvdite kol. strok: ";
+		cin >> y;
+
+		int a = 0;
+		int b = y;
+
+		for (int i = 0; i < y; i++)
+		{
+			for (int i = 0; i < a; i++)
+			{
+				cout << "  ";
+			}
+			for (int i = 0; i < b; i++)
+			{
+				cout << "* ";
+			}
+			cout << endl;
+			b--;
+			a++;
+		}
+	}
+	if (bukva == 'i')
+	{
+		int x = 5;
+		cout << "vvdite kol. strok: ";
+		cin >> x;
+
+		int y = x;
+		for (int j = 0; j < y; j++)
+		{
+			for (int i = 0; i < x; i++)
+			{
+				cout << "* ";
+			}
+
+			cout << endl;
+			x--;
+		}
+	}
+
+	if (bukva == 'b')
+	{
+		int x = 1;
+		int y;
+
+		cout << "vvdite kol. strok: ";
+		cin >> y;
+
+		for (int j = 0; j < y; j++)
+		{
+			for (int i = 0; i < x; i++)
+			{
+				cout << "* ";
+			}
+
+			cout << endl;
+			x++;
+		}
+	}
+	if (bukva == 'k')//S
+	{
+		int x;
+		cout << "vvdite kol. strok: ";
+		cin >> x;
+
+		int a = x;
+		int b = 0;
+
+		for (int j = 0; j < x; j++)
+		{
+			for (int i = 0; i <= a; i++)//не в квадрате получается .
+			{
+				cout << "- ";
+			}
+			for (int i = 0; i <= b; i++)
+			{
+				cout << "* ";
+			}
+			cout << endl;
+			a--;
+			b++;
+		}
+	}
+
+	if (bukva == 'v')
+	{
+		int x;
+		cout << "vvdite kol. strok: ";
+		cin >> x;
+
+		if (x % 2 == 0)
+			x++;
+
+		int a = 0;
+		int b = x;//?убрала +2.
+
+		for (int i = 0; i < x; i++)
+		{
+			for (int i = 0; i < a; i++)
+			{
+				cout << "- ";
+			}
+			for (int i = 0; i < b; i++)
+			{
+				cout << "* ";
+			}
+			cout << endl;
+			a++;
+			b = b - 2;
+		}
+	}
+
+	if (bukva == 'g')
+	{
+		int n=8;
+		/*cout << "n ";
+		cin >> n;*/
+		for (int i = 0; i < n/2; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				if (j >= (n / 2) - i && j <= (n / 2) + i)
+					cout << "* ";
+				else
+					cout << "  ";
+			}
+			cout << endl;
+		}
+
+	}
+
+	if (bukva == 'd')
+	{
+		int n;
+		cout << "n ";
+		cin >> n;
+		for (int i = 0; i < n / 2; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				if (j >= (n / 2) - i && j <= (n / 2) + i)
+					cout << "* ";
+				else
+					cout << "  ";
+			}
+			cout << endl;
+		}
+		for (int i = 0; i < n / 2; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				if (j >= (n / 2) - i && j <= (n / 2) + i)
+					cout << "* ";
+				else
+					cout << "  ";
+			}
+			cout << endl;
+		}
+
+	}
+
+
+	if (bukva == 'w')//s +луч
+	{
+		int x = 3;
+		cout << "vvdite kol. strok: ";
+		cin >> x;
+
+		if (x % 2 == 0)
+			x++;
+
+		int a = 0;
+		int b = x + 2;
+
+		for (int i = 0; i < x; i++)
+		{
+			for (int i = 0; i < a; i++)
+			{
+				cout << "  ";
+			}
+			for (int i = 0; i < b; i++)
+			{
+				cout << "* ";
+			}
+			cout << endl;
+			a++;
+			b = b + 2;//было b=b-2(g картинка)
+		}
+	}
+
+
+
+	if (bukva == 'q')//s + закрашенный квадрат
+	{
+		int x;
+		cout << "vvdite kol. strok: ";
+		cin >> x;
+
+		for (int i = 0; i < x; i++)
+		{
+			for (int i = 0; i < x; i++)
+			{
+				cout << "* ";
+			}
+			cout << endl;
+		}
+	}
+
+	if (bukva == 'p')//диагональ
+	{
+		int n;
+		cout << " ";
+		cin >> n;
+		int i;
+
+		for (i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				if (i + j == n - 1)
+
+					cout << "*";
+				else
+					cout << "=";
+			}
+			cout << endl;
+		}
+		cout << endl;
+	}
+}
+		
+
